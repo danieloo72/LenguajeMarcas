@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<animales>
+
+    <animal>
+        <nombre>Leon</nombre>
+    </animal>
+
+    <animal>
+        <nombre>Puma</nombre>
+    </animal>
+
+    <animal>
+        <nombre>Jirafa</nombre>
+    </animal>
+
+    <animal>
+        <nombre>Elefante</nombre>
+    </animal>
+
+</animales>

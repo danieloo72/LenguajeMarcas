@@ -1,0 +1,43 @@
+div[data-user] {
+    border: 1px solid rgb(114, 102, 102);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+div[data-status="activo"] {
+    background-color: rgb(49, 155, 15);
+}
+
+div[data-status="inactivo"] {
+    background-color: rgb(164, 61, 61);
+    opacity: 0.7;
+}
+
+div[data-role="admin"] {
+    border-left: 5px solid gold;
+}
+
+div[data-role="usuario"] {
+    border-left: 5px solid silver;
+}
+
+button[disabled] {
+    background-color: antiquewhite;
+    cursor: not-allowed;
+}
+
+button:not([disabled]) {
+    cursor:pointer;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+body {
+    background-color: rgb(35, 170, 170);
+}

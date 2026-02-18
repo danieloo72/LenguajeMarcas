@@ -1,0 +1,55 @@
+body {
+    background-color: rgb(156, 153, 153);
+    font-family: Arial;
+}
+
+#contenedor {
+    width: 450px;
+    margin: 60px;
+    background-color: white;
+    padding: 50px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.titulo {
+    color: darkred;
+    margin-bottom: 15px;
+}
+
+.texto {
+    color: brown;
+    margin-bottom: 15px;
+}
+
+input {
+    width: 90%;
+    padding: 4px;
+    margin-bottom: 20px;
+    border: 1px solid rgb(58, 57, 57);
+}
+
+.botones {
+    margin-bottom: 15px;
+}
+
+#saludar {
+    padding: 8px;
+    width: 30%;
+    background-color: rgb(108, 203, 108);
+    color: white;
+    cursor: pointer;
+}
+
+#cambiarColor {
+    padding: 8px;
+    width: 30%;
+    background-color: rgb(200, 100, 24);
+    color: white;
+    cursor: pointer;
+}
+
+#resultado {
+    color: dodgerblue;
+    font-weight: bold;
+}

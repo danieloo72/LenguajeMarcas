@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<productos>
+
+    <producto>
+        <nombre>Camiseta</nombre>
+        <categoria>ropa</categoria>
+    </producto>
+
+    <producto>
+        <nombre>PC</nombre>
+        <categoria>tecnologia</categoria>
+    </producto>
+
+    <producto>
+        <nombre>Silla</nombre>
+        <categoria>hogar</categoria>
+    </producto>
+
+    <producto>
+        <nombre>Pantalón</nombre>
+        <categoria>ropa</categoria>
+    </producto>
+
+</productos>
