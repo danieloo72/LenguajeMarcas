@@ -3,6 +3,9 @@ const btnLimpiar = document.getElementById("limpiar");
 const contador = document.getElementById("contador");
 const contenedorAnimales = document.getElementById("ganador");
 const contenedorGanador = document.getElementById("texto-ganador");
+const modal = document.getElementById("modal-ganador");
+const mensajeModal = document.getElementById("mensaje-modal");
+const btnEntendido = document.getElementById("btn-entendido");
 
 let votosTotal = 0;
 
@@ -63,18 +66,23 @@ function actualizarGanador() {
     let maxVotos = 0;
     let nombreGanador = "Nadie";
 
-    animales.forEach((animal) => {
-        
-        const nombre = animal.querySelector(".nombre").textContent;
-        const votos = parseInt(animal.querySelector(".contadorINDV").textContent.split(": ")[1]);
+    animales.forEach(a => a.classList.remove("ganador"));
 
-        if(votos > maxVotos) {
+    animales.forEach((animal) => {
+        const votos = parseInt(animal.querySelector(".contadorINDV").textContent.split(": ")[1]);
+        if (votos > maxVotos) {
             maxVotos = votos;
-            nombreGanador = nombre;
+            nombreGanador = animal.querySelector(".nombre").textContent;
         }
     });
 
-    if(maxVotos > 0) {
+    if (maxVotos > 0) {
+        animales.forEach((animal) => {
+            const votos = parseInt(animal.querySelector(".contadorINDV").textContent.split(": ")[1]);
+            if (votos === maxVotos) {
+                animal.classList.add("ganador");
+            }
+        });
         contenedorGanador.innerText = `Ganador actual: ${nombreGanador} con ${maxVotos} votos`;
     } else {
         contenedorGanador.innerText = "Aún no hay votos";
@@ -86,8 +94,16 @@ function cerrarVotos() {
     botones.forEach((boton) => {
         boton.disabled = true;
     });
+
+    const textoFinal = contenedorGanador.innerText;
+    mensajeModal.innerText = (votosTotal > 0) ? `El resultado final es: ${textoFinal}` : "La encuesta cerró sin votos.";
+
+        modal.style.display = "block";
 }
 
+btnEntendido.addEventListener("click", () => {
+    modal.style.display = "none";
+});
 btnLimpiar.addEventListener("click", () => {
     location.reload(); 
 });
