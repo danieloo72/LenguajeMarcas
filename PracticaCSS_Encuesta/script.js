@@ -8,6 +8,7 @@ const mensajeModal = document.getElementById("mensaje-modal");
 const btnEntendido = document.getElementById("btn-entendido");
 
 let votosTotal = 0;
+let cronometroVotos = 0;
 
 fetch("galeria.xml").then((response) => response.text())
     .then((data) => {
@@ -21,7 +22,7 @@ fetch("galeria.xml").then((response) => response.text())
             const nombre = animal.getElementsByTagName("nombre")[0].textContent;
 
             contenedorAnimales.innerHTML += `
-            <div class="animal" data-anim>
+            <div class="animal" data-anim data-orden="0">
                 <p class="nombre">${nombre}</p>
                 <button class="votar">Votar</button>
                 <p class="contadorINDV">Votos: 0</p>
@@ -51,6 +52,9 @@ function añadirVoto(evento) {
     votosActuales++;
     votosTotal++;
 
+    cronometroVotos++;
+    animalDiv.setAttribute("data-orden", cronometroVotos);
+
     contadorINDV.textContent = `Votos: ${votosActuales}`;
     actualizarContador();
     actualizarGanador();
@@ -79,6 +83,7 @@ function actualizarGanador() {
     if (maxVotos > 0) {
         animales.forEach((animal) => {
             const votos = parseInt(animal.querySelector(".contadorINDV").textContent.split(": ")[1]);
+            const orden = parseInt(animal.getAttribute("data-orden"));
             if (votos === maxVotos) {
                 animal.classList.add("ganador");
             }
